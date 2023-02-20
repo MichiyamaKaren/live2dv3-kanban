@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1900">
+  <title>Live2D看板娘</title>
+  <link rel="stylesheet" type="text/css" href="static/css/live2d.css" />
+  <style>
+    .select-block{
+      margin: 10px;
+    }
+  </style>
+  <!-- Pollyfill script -->
+  <script src="https://unpkg.com/core-js-bundle@3.6.1/minified.js"></script>
+  <!-- Live2DCubismCore script -->
+  <script src="./static/js/live2dcubismcore.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="./static/js/canvas2image.js"></script>
+
+  <!-- Build script -->
+  <script src="../dist/bundle.js"></script>
+  <script src="./demo.js"></script>
+</head>
+
+<body>
+  <div style="text-align:center; display: flex; margin: 10px;">
+    <div class="select-block">
+      <div> 设置表情 <br> </div>
+      <select id="exp-setter"></select>
+    </div>
+    <div class="select-block">
+      <div> 设置动作 <br> </div>
+      <select id="mtn-setter"></select>
+    </div>
+    <button id="loadL2D">加载模型</button>
+  </div>
+  
+  <div class="live2d-main">
+    <div class="live2d-tips"></div>
+    <canvas id="live2d" class="live2d"></canvas>
+    <div class="live2d-tool"></div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+node_modules/
+dist/
+
+Demo/config.json
+Demo/static/js
+Demo/static/model

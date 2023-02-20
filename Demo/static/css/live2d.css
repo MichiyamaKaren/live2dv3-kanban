@@ -1,0 +1,83 @@
+.live2d-main {
+    position: fixed;
+    z-index: 1;
+    font-size: 0;
+}
+
+@media (max-width: 768px) {
+    /* not displaying on cellphone */
+    .live2d-main {
+        display: none;
+    }
+}
+
+.live2d-tips {
+    opacity: 0;
+    z-index: inherit;
+    width: 250px;
+    height: 70px;
+    margin: -50px 20px;
+    padding: 5px 10px;
+    border: 1px solid rgba(224, 186, 140, 0.62);
+    border-radius: 12px;
+    background-color: rgba(236, 217, 188, 0.5);
+    box-shadow: 0 3px 15px 2px rgba(191, 158, 118, 0.2);
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+}
+
+.live2d-tool {
+    display: none;
+    color: #aaa;
+    top: 30px;
+    right: 0;
+    font-size: 30px;
+    text-align: center;
+    position: absolute;
+}
+
+.live2d-main:hover .live2d-tool {
+    display: block;
+}
+
+.live2d-tool span {
+    display: block;
+    cursor: pointer;
+    color: #5b6c7d;
+    line-height: 50px;
+    transition: 0.2s;
+}
+
+.live2d-tool span:hover {
+    color: #34495e;
+}
+
+.live2d-main #live2d {
+    position: relative;
+}
+
+#waifu-toggle {
+    background-color: #fa0;
+    border-radius: 5px;
+    bottom: 66px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    left: 0;
+    margin-left: -100px;
+    padding: 5px 2px 5px 5px;
+    position: fixed;
+    transition: margin-left 1s;
+    width: 60px;
+    writing-mode: vertical-rl;
+}
+
+#waifu-toggle.waifu-toggle-active {
+    margin-left: -50px;
+}
+
+#waifu-toggle.waifu-toggle-active:hover {
+    margin-left: -30px;
+}

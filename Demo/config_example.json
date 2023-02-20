@@ -1,0 +1,63 @@
+{
+    "global": {
+        "model": {
+            "scale": 1.325,
+            "translate": [-0.05, -0.9]
+        },
+        "canvas": {
+            "height": 300,
+            "ratio": 0.8,
+            "bottom": 0,
+            "left": 0,
+            "marginRight": 0.0625
+        },
+        "toolbar": {
+            "top": 0.075,
+            "fontSize": 0.075
+        }
+    },
+    "tool": {
+        "randomMsg": {
+            "icon": "fa fa-comment",
+            "hover": "随机台词",
+            "message": [
+                {
+                    "text": "",
+                    "exp": "",
+                    "mtn": ""
+                }
+            ]
+        },
+        "randomExp": {
+            "icon": "fa fa-smile-o",
+            "hover": "随机表情"
+        },
+        "changeModel": {
+            "icon": "fa fa-user-circle-o",
+            "hover": "更换模型"
+        },
+        "drag": {
+            "icon": "fa fa-hand-paper-o",
+            "hover": "拖动",
+            "dragging_icon": "fa fa-hand-grab-o"
+        },
+        "savePic": {
+            "icon": "fa fa-camera",
+            "hover": "保存图像",
+            "fileName": "L2DImage"
+        },
+        "about": {
+            "icon": "fa fa-info",
+            "hover": "关于",
+            "url": "https://michiyamakaren.github.io/"
+        },
+        "close": {
+            "icon": "fa fa-close",
+            "hover": "关闭看板娘",
+            "message": "",
+            "msgTime": 2000,
+            "closeTime": 3000
+        }
+    },
+    "onCopy": "你都复制了些什么呀,能让我看看吗？"
+}
