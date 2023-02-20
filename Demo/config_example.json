@@ -49,7 +49,7 @@
         "about": {
             "icon": "fa fa-info",
             "hover": "关于",
-            "url": "https://michiyamakaren.github.io/"
+            "url": "https://github.com/MichiyamaKaren/live2dv3-kanban"
         },
         "close": {
             "icon": "fa fa-close",
