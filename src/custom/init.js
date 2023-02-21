@@ -117,5 +117,4 @@ function resetToolbar(toolbar, tools_callback, config) {
             'line-height', `${lineHeightPx}px`);
 }
 
-$('#loadL2D').click(setup);
-window.onload = setup;
+window.setupKanban = setup;
