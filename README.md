@@ -1,25 +1,78 @@
 # Live2Dv3 Kanban
 
+## 直接使用
+
+若不需要自行构建，可以直接通过jsDelivr访问打包的js脚本并在项目中引用。
+
+### 引用依赖脚本
+
+在页面的header中引用所需的js脚本和CSS样式文件
+```html
+<!-- Pollyfill script -->
+<script src="https://unpkg.com/core-js-bundle@3.6.1/minified.js"></script>
+<!-- Live2DCubismCore script -->
+<script src="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@latest/Demo/static/js/live2dcubismcore.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@latest/Demo/static/js/canvas2image.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@latest/dist/l2dkanban.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@latest/Demo/static/css/live2d.css" />
+```
+
+### 设定模型路径
+
+`l2dkanban.min.js`文件为本项目打包生成的文件，引入后会在`window`下注册字典变量`L2DSettings`用于设定模型和配置文件路径等信息，以及加载模型的函数`setupKanban`。
+
+在项目中新建目录（假设目录名为`models`），将Live2D模型文件添加到`models`下，每个模型的目录名要和`*.model3.json`的前缀一致。例如，若有模型`karen`和`hikari`，则`models`下的目录结构应如
+```
+├── path/to/models
+│   ├── karen
+│   │   ├── karen.model3.json
+│   │   ├── other...
+│   ├── hikari
+│   │   ├── hikari.model3.json
+│   │   ├── other...
+```
+此时应在header中添加如下js代码进行设定
+```html
+<script type="text/javascript">
+    L2Dsettings.configPath = '/path/to/config.json';  // 设定配置文件路径
+    L2Dsettings.resourcesPath = '/path/to/models/';  // 设定模型文件路径
+    L2Dsettings.backImageName = '';
+    L2Dsettings.modelDirs = 'karen,hikari'.split(',');  // 设定使用的模型名
+    L2Dsettings.canvasId = 'live2d';
+
+    L2Dsettings.onModelLoaded = (model) => {  // 应用初始表情和动作，需在live2d模型的model3.json文件中定义onLoad表情和动作组
+        model.setExpression("onLoad");
+        model.startMotion("onLoad", 0, 2);
+    };
+
+    window.onload = setupKanban;  // 自动加载模型
+</script>
+```
+
+### 插入页面元素
+
+在body中插入看板娘面板的HTML元素
+```html
+<div class="live2d-main">
+    <div class="live2d-tips"></div>
+    <canvas id="live2d" class="live2d"></canvas>
+    <div class="live2d-tool"></div>
+</div>
+```
+`canvas`对象的`id`属性应与`L2Dsettings.canvasId`变量的值保持一致。
+
 ## 构建
 
 - 下载项目代码（由于项目中包含子模块，需要使用`git clone --recursive`）
-- 运行`npm install`下载需要的依赖库，再运行`npm run build`编译项目代码，这会在`dist`生成`bundle.js`文件。
-- 将Live2D模型目录复制到`Demo/static/model`下，注意目录名需要和`*.model3.json`的前缀一致。再在`Demo/demo.js`中设置`modelDirs`变量的值。
-  - 例如，若有模型`karen`和`hikari`，则`Demo/static/model`下的目录结构应如：
-  ```
-  ├── model
-  │   ├── karen
-  │   │   ├── karen.model3.json
-  │   │   ├── other...
-  │   ├── hikari
-  │   │   ├── hikari.model3.json
-  │   │   ├── other...
-  ```
-  同时应在`Demo/demo.js`中设置
-  ```js
-  L2Dsettings.modelDirs = 'karen,hikari'.split(',');
-  ```
-- 复制看板娘配置文件`Demo/config_example.json`到`Demo/config.json`。
+- 运行`npm install`下载需要的依赖库，再运行`npm run build`编译项目代码，这会在`dist`生成`l2dkanban.js`文件。
+  - 运行`npm run build:prod`则会生成压缩的`l2dkanban.min.js`。
+- 在`Demo/demo.js`中参考上一节的内容进行相关设置。
 - 运行`npm run serve`启动本地服务，访问`http://localhost:5000/Demo/`即可查看看板娘效果。
 
 ## 配置

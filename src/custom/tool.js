@@ -35,7 +35,7 @@ let tools = {
     savePic: {
         click: function (config, event) {
             let canvas = $('canvas#live2d')[0];
-            Canvas2Image.saveAsPNG(canvas, canvas.width, canvas.height, 'png', config.fileName);
+            Canvas2Image.saveAsPNG(canvas, canvas.width, canvas.height, config.fileName);
         }
     },
     about: {

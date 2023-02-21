@@ -38,3 +38,5 @@ L2Dsettings.onModelLoaded = (model) => {
     model.setExpression("onLoad");
     model.startMotion("onLoad", 0, 2);
 };
+
+window.onload = setupKanban;

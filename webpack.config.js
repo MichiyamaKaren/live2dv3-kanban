@@ -10,6 +10,9 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/dist/'
   },
+  cache: {
+    type: 'filesystem'
+  },
   resolve: {
     extensions: ['.ts', '.js'],
     alias: {
