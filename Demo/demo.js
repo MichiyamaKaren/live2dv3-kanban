@@ -39,4 +39,6 @@ L2Dsettings.onModelLoaded = (model) => {
     model.startMotion("onLoad", 0, 2);
 };
 
-window.onload = setupKanban;
+window.onload = () => {
+    $('#loadL2D').click(setupKanban);
+}

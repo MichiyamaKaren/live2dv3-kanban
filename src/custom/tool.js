@@ -47,7 +47,7 @@ let tools = {
         click: function (config, event) {
             showMessage(config.message, true, config.msgTime);
             let l2d_panel = $('.live2d-main');
-            let yDown = window.innerHeight - l2d_panel.offset().top;
+            let yDown = window.innerHeight - (l2d_panel.offset().top - document.documentElement.scrollTop);
             l2d_panel.animate(
                 { 'top': `+=${yDown}px` },
                 config.closeTime,
