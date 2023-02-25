@@ -1,5 +1,7 @@
 # Live2Dv3 Kanban
 
+支持Live2D Model3的网页看板娘插件。效果可参考[道山神連的博客](https://michiyamakaren.github.io/)。
+
 ## 直接使用
 
 若不需要自行构建，可以直接通过jsDelivr访问打包的js脚本并在项目中引用。
@@ -11,16 +13,16 @@
 <!-- Pollyfill script -->
 <script src="https://unpkg.com/core-js-bundle@3.6.1/minified.js"></script>
 <!-- Live2DCubismCore script -->
-<script src="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@latest/Demo/static/js/live2dcubismcore.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@1.1/Demo/static/js/live2dcubismcore.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@latest/Demo/static/js/canvas2image.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@1.1/Demo/static/js/canvas2image.js"></script>
 
-<script src="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@latest/dist/l2dkanban.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@1.1/dist/l2dkanban.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@latest/Demo/static/css/live2d.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MichiyamaKaren/live2dv3-kanban@1.1/Demo/static/css/live2d.css" />
 ```
 
 ### 设定模型路径
